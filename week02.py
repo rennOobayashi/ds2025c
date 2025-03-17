@@ -1,7 +1,5 @@
 n = int(input("enter integer number: "))
-sum = 0
 
-for i in range(1, n + 1) :
-    sum += i
+sum = n * (n + 1) // 2 # O(1)
 
 print(sum)
