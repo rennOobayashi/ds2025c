@@ -5,18 +5,17 @@ random.seed(time.time())
 
 random_a = random.randint(1, 100) + 1
 
-print("Random Integer")
+print("~Random Integer~")
 
 for i in range(7, 0, -1):
-    inp = int(input(f"Enter Answer(remain: {i}): "))
+    guess = int(input(f"Enter Answer(remain: {i}): "))
 
-    if inp > random_a :
+    if guess > random_a and i > 1:
         print("down")
-    elif inp < random_a:
+    elif guess < random_a and i > 1:
         print("up")
+    elif i <= 1:
+        print(f"You lose! (answer is {random_a})")
     else:
         print("You win!")
         break
-
-    if i <= 1:
-        print("You lose!")
