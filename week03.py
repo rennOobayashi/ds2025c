@@ -1,6 +1,5 @@
-groups = ["HOT", "Seventeen", "Black Pink", "NJZ"]
-ratings = [1, 2, 4, 3]
+cities = ["Suwan", "Hwasung", "Incheon", "Incheon", "Bucheon", "Incheon", "Seoul"]
 
-group_ratings = dict(zip(ratings, groups))
+cities = set(cities)
 
-print(group_ratings)
+print(cities)
