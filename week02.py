@@ -3,6 +3,7 @@ import random
 
 random.seed(time.time())
 
+# 1 ~ 100
 random_a = random.randint(0, 100) + 1
 
 print("~Random Integer~")

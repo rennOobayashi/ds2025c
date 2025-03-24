@@ -1,4 +1,6 @@
-ls = [99, -7, 1, 5, 0.15, 1]
+import array
 
-for i in range(len(ls)):
-    print(f"{ls[i]:4} {id(ls[i])}")
+arr = array.array("f", [99, -7, 1, 5, 15, 1])
+
+for i in range(len(arr)):
+    print(f"{arr[i]:4} {id(arr[i])}")
