@@ -1,12 +1,13 @@
 def inters(l1, l2):
-    l3 = []
 
-    #l3 = [v for v in l1  if v in l2]
-    for v in l1:
-        if v in l2:
-            l3.append(v)
+    set1 = set(l1)
+    set2 = set(l2)
+    #set3 = set1.intersection(set2)
 
-    return l3
+    #return list(set3)
+    return list(set1 & set2)
+    #return list(set1 - set2)
+    #return list(set1 | set2)
 
 l1 = [45, 1, 5, 4, 3, 21]
 l2 = [2, 5, 45, 14, 11, 21, 35, 23]
