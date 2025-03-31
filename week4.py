@@ -1,3 +1,5 @@
+import random
+
 class Node:
     def __init__(self, data, link=None):
         self.data = data
@@ -25,6 +27,7 @@ class LinkedList:
         while current.link:
             if current.data == target_data:
                 return True
+
             current = current.link
 
         return False
@@ -34,10 +37,11 @@ class LinkedList:
 
         while current.link:
             if current.data == target_data:
-                return "Have"
+                return f"Have {target_data}"
+
             current = current.link
 
-        return "Not Have"
+        return f"Not Have {target_data}"
 
     def __str__(self):
         node = self.head
@@ -53,11 +57,17 @@ class LinkedList:
         #return "End Point"
 
 ls = LinkedList()
-ls.append(3)
-ls.append(2)
-ls.append(1)
+# ls.append(3)
+# ls.append(2)
+# ls.append(1)
+
+#for i in range(10): not use i
+for _ in range(10):
+    r = random.randint(0, 50)
+    ls.append(r)
 
 print(ls)
+print(ls.search_return_to_string(5))
 
-print(ls.search(3))
-print(ls.search_return_to_string(10))
+# print(ls.search(3))
+# print(ls.search_return_to_string(10))
