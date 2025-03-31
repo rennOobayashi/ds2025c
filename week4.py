@@ -26,7 +26,7 @@ class LinkedList:
         datas = ""
 
         while node is not None:
-            datas = datas + str(node.data) + " -> "
+            datas = datas + f"{node.data} -> "
             #print(node.data, end=" -> ")
             node = node.link
 
