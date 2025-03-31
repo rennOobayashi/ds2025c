@@ -1,6 +1,3 @@
-from typing import dataclass_transform
-
-
 class Node:
     def __init__(self, data, link=None):
         self.data = data
@@ -22,9 +19,23 @@ class LinkedList:
 
         current.link = Node(data)
 
+
+    def __str__(self):
+        node = self.head
+
+        datas = ""
+
+        while node is not None:
+            datas = datas + str(node.data) + " -> "
+            #print(node.data, end=" -> ")
+            node = node.link
+
+        return datas + "End Point"
+        #return "End Point"
+
 ls = LinkedList()
-ls.append(1)
-ls.append(2)
 ls.append(3)
+ls.append(2)
+ls.append(1)
 
 print(ls)
