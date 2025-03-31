@@ -19,6 +19,25 @@ class LinkedList:
 
         current.link = Node(data)
 
+    def search(self, target_data):
+        current = self.head
+
+        while current.link:
+            if current.data == target_data:
+                return True
+            current = current.link
+
+        return False
+
+    def search_return_to_string(self, target_data):
+        current = self.head
+
+        while current.link:
+            if current.data == target_data:
+                return "Have"
+            current = current.link
+
+        return "Not Have"
 
     def __str__(self):
         node = self.head
@@ -39,3 +58,6 @@ ls.append(2)
 ls.append(1)
 
 print(ls)
+
+print(ls.search(3))
+print(ls.search_return_to_string(10))
