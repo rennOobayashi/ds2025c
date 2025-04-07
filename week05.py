@@ -16,8 +16,8 @@ def check_parentheses(check_string : str) -> str:
         return ("Wrong use of parentheses\r\n"
                 "(Need closing parentheses)")
 
-s1 = "(Nayutan seinjin)"
-s2 = ")(Nayutan seinjin)("
+s1 = "(Nayutan seijin)"
+s2 = ")(Nayutan seijin)("
 
 print(check_parentheses(s1))
 print(check_parentheses(s2))
