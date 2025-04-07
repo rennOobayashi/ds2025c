@@ -5,7 +5,7 @@ def check_parentheses(check_string : str) -> str:
     stack["["] = []
 
     for data in check_string:
-        if data == '(' or data == '{' or data == '[':
+        if data in stack.keys():
             stack[data].append(data)
         elif data == ')'  or data == '}' or data == ']':
             d = ''
@@ -27,7 +27,7 @@ def check_parentheses(check_string : str) -> str:
 
 s1 = "[{(Nayutan seijin)}]"
 s2 = "}[(Nayutan seijin)[}"
-s3 = "[({Nayutan seijin)]}"
+s3 = "[((Nayutan seijin)]}"
 
 print(check_parentheses(s1))
 print(check_parentheses(s2))
