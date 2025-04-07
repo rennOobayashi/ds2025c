@@ -38,11 +38,21 @@ class Stack:
     def peek(self):
         return self.top.data
 
+    def print_stack(self):
+        data = self.top
+        while data is not None:
+            print(f"{data.data}", end=" ")
+            data = data.link
+
+        print()
+
 s = Stack()
 print(s.is_empty())
 s.push(1)
 print(s.is_empty())
 s.push(2)
 s.push(3)
-print(s.peek())
-print(s.pop())
+s.print_stack()
+# print(s.peek())
+# print(s.pop())
+# print(s.pop())
