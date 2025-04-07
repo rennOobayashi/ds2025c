@@ -1,24 +1,42 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.link = None
+
 class Stack:
     def __init__(self):
-        self.items = []
+        self.top = None
+        self.index_cnt = 0
 
     def push(self, data):
-        self.items.append(data)
+        node = Node(data)
+        self.index_cnt += 1
+
+        if self.top is None:
+            self.top = node
+        else:
+            node.link = self.top
+            self.top = node
 
     def pop(self):
-        return self.items.pop()
+        if self.top is None:
+            return print("This stack is empty")
+
+        self.index_cnt -= 1
+
+        popped_node = self.top
+        self.top = self.top.link
+        popped_node.link = None
+        return popped_node.data
 
     def size(self):
-        return len(self.items)
+        return self.index_cnt
 
     def is_empty(self):
-        return len(self.items) == 0
+        return self.top is None
 
-    def top(self):
-        return self.items[-1]
-
-    def __str__(self):
-        return f"{[d for d in self.items]}"
+    def peek(self):
+        return self.top.data
 
 s = Stack()
 print(s.is_empty())
@@ -26,6 +44,5 @@ s.push(1)
 print(s.is_empty())
 s.push(2)
 s.push(3)
-print(s.top())
+print(s.peek())
 print(s.pop())
-print(s)
