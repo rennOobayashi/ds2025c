@@ -1,8 +1,31 @@
-s = "Hello world!"
-s2 = ''
+class Stack:
+    def __init__(self):
+        self.items = []
 
-for i in range(len(s) - 1, -1, -1):
-    s2 += s[i]
+    def push(self, data):
+        self.items.append(data)
 
-#Waste of memory
-print(s2)
+    def pop(self):
+        return self.items.pop()
+
+    def size(self):
+        return len(self.items)
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def top(self):
+        return self.items[-1]
+
+    def __str__(self):
+        return f"{[d for d in self.items]}"
+
+s = Stack()
+print(s.is_empty())
+s.push(1)
+print(s.is_empty())
+s.push(2)
+s.push(3)
+print(s.top())
+print(s.pop())
+print(s)
