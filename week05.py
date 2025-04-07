@@ -10,7 +10,7 @@ print(s1.pop())
 print(s1)
 print(s1.pop())
 print(s1)
-g
+
 # index error
 # print(s1.pop())
 # print(s1)
