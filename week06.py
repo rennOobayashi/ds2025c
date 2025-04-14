@@ -20,9 +20,35 @@ class Queue:
             self.rear.link = node
             self.rear = node
 
+    def dequeue(self):
+        if self.front is None:
+            raise IndexError("Queue is empty!")
+
+        self.size -= 1
+        temp = self.front
+        self.front = self.front.link
+
+        if self.front is None:
+            self.rear = None
+
+        temp.link = None
+
+        return temp.data
+
+
 q = Queue()
 q.enqueue("NayutanSeijin")
 q.enqueue("Deco27")
 q.enqueue("PinocchioP")
+print(q.dequeue())
 
 print(q.size, q.front.data, q.rear.data)
+
+print(q.dequeue())
+
+print(q.size, q.front.data, q.rear.data)
+
+print(q.dequeue())
+
+#가리키는 대상이 없음
+print(q.size, q.front, q.rear)
