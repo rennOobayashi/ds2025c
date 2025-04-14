@@ -40,15 +40,14 @@ q = Queue()
 q.enqueue("NayutanSeijin")
 q.enqueue("Deco27")
 q.enqueue("PinocchioP")
-print(q.dequeue())
 
+print(q.dequeue())
+# front = node, rear = node
 print(q.size, q.front.data, q.rear.data)
 
 print(q.dequeue())
-
 print(q.size, q.front.data, q.rear.data)
 
 print(q.dequeue())
-
-#가리키는 대상이 없음
+# front = None, rear = None
 print(q.size, q.front, q.rear)
