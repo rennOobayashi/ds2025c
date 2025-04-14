@@ -20,7 +20,7 @@ class Queue:
             self.rear.link = node
             self.rear = node
 
-    def dequeue(self):
+    def dequeue(self) -> str:
         if self.front is None:
             raise IndexError("Queue is empty!")
 
@@ -33,8 +33,13 @@ class Queue:
 
         temp.link = None
 
-        return temp.data
+        return f"dequeue - {temp.data}"
 
+    def print_queue(self):
+        if self.front is None or self.rear is None:
+            print(self.size, self.front, self.rear)
+        else:
+            print(self.size, self.front.data, self.rear.data)
 
 q = Queue()
 q.enqueue("NayutanSeijin")
@@ -43,11 +48,11 @@ q.enqueue("PinocchioP")
 
 print(q.dequeue())
 # front = node, rear = node
-print(q.size, q.front.data, q.rear.data)
+q.print_queue()
 
 print(q.dequeue())
-print(q.size, q.front.data, q.rear.data)
+q.print_queue()
 
 print(q.dequeue())
 # front = None, rear = None
-print(q.size, q.front, q.rear)
+q.print_queue()
