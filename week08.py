@@ -1,30 +1,60 @@
+def post_order(model):
+    if model is None:
+        return
+
+    post_order(model.left)
+    post_order(model.right)
+
+    print(model.data, end='->')
+
+def in_order(model):
+    if model is None:
+        return
+
+    in_order(model.left)
+    print(model.data, end='->')
+    in_order(model.right)
+
+def pre_order(model):
+    if model is None:
+        return
+
+    print(model.data, end='->')
+
+    pre_order(model.left)
+    pre_order(model.right)
+
 class TreeNode:
     def __init__(self):
         self.left = None
         self.right = None
         self.data = None
+node1 = TreeNode()
+node1.data = 'Nayutan'
 
-model1 = TreeNode()
-model1.data = 'Nayutan'
+node2 = TreeNode()
+node2.data = 'Deco*27'
+node1.left = node2
 
-model2 = TreeNode()
-model2.data = 'Deco*27'
-model1.left = model2
+node3 = TreeNode()
+node3.data = 'Kasamura Tato'
+node1.right = node3
 
-model3 = TreeNode()
-model3.data = 'Kasamura Tato'
-model1.right = model3
+node4 = TreeNode()
+node4.data = 'MIMI'
+node2.left = node4
 
-model4 = TreeNode()
-model4.data = 'MIMI'
-model2.left = model4
+node5 = TreeNode()
+node5.data = 'Threee'
+node2.right = node5
 
-model5 = TreeNode()
-model5.data = 'Threee'
-model2.right = model5
+node6 = TreeNode()
+node6.data = 'PinocchioP'
+node3.left = node6
 
-model6 = TreeNode()
-model6.data = 'PinocchioP'
-model3.left = model6
-
-print(model1.left.left.data)
+post_order(node1)
+print()
+in_order(node1)
+print()
+pre_order(node1)
+print()
