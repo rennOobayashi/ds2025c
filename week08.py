@@ -48,6 +48,14 @@ class TreeNode:
                 continue
 
 
+def pre_order(model):
+    if model is None:
+        return
+
+    print(model.data, end='->')
+    pre_order(model.left)
+    pre_order(model.right)
+
 def in_order(model):
     if model is None:
         return
@@ -55,6 +63,14 @@ def in_order(model):
     in_order(model.left)
     print(model.data, end='->')
     in_order(model.right)
+
+def past_order(model):
+    if model is None:
+        return
+
+    past_order(model.left)
+    past_order(model.right)
+    print(model.data, end='->')
 
 if __name__ == '__main__':
     numbers = [10, 15, 8, 4, 9, 1, 7, 100, 5]
@@ -65,10 +81,13 @@ if __name__ == '__main__':
     for i in numbers:
         root = node.insert(root, i)
 
-
-
+    pre_order(root)
+    print()
     in_order(root)
+    print()
+    past_order(root)
+    print()
 
-    find_number = int(input())
+    find_number = int(input('enter your number: '))
 
     node.search(root, find_number)
