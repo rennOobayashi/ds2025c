@@ -30,16 +30,14 @@ class TreeNode:
 
         return root
 
-    def search(self, root, find_value):
+    def search(self, root, find_value) -> bool:
         c = root
 
         while True:
             if c is None:
-                print(f"cannot find {find_number}")
-                break
+                return False
             elif c.data is find_number:
-                print(f"find {find_number}!")
-                break
+                return True
             elif c.data > find_number:
                 c = c.left
                 continue
@@ -90,4 +88,4 @@ if __name__ == '__main__':
 
     find_number = int(input('enter your number: '))
 
-    node.search(root, find_number)
+    print(f"find {find_number}!") if node.search(root, find_number) else print(f"cannot find {find_number}")
