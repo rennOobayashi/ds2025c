@@ -96,10 +96,10 @@ def delete_node(node, value):
 
             # min_right = node.right
             #
-            # while max_left.left:
-            #     max_left = max_left.left
-            # node.data = max_left.data
-            # node.left = delete_node(node.left, max_left.data)
+            # while min_right.left:
+            #     min_right = min_right.left
+            # node.data = min_right.data
+            # node.right = delete_node(node.right, min_right.data)
 
 
             if max_left is node.left:
