@@ -36,39 +36,39 @@ class TreeNode:
         while True:
             if c is None:
                 return False
-            elif c.data is find_number:
+            elif c.data is find_value:
                 return True
-            elif c.data > find_number:
+            elif c.data > find_value:
                 c = c.left
                 continue
-            elif c.data < find_number:
+            elif c.data < find_value:
                 c = c.right
                 continue
 
 
-def pre_order(model):
-    if model is None:
+def pre_order(node):
+    if node is None:
         return
 
-    print(model.data, end='->')
-    pre_order(model.left)
-    pre_order(model.right)
+    print(node.data, end='->')
+    pre_order(node.left)
+    pre_order(node.right)
 
-def in_order(model):
-    if model is None:
+def in_order(node):
+    if node is None:
         return
 
-    in_order(model.left)
-    print(model.data, end='->')
-    in_order(model.right)
+    in_order(node.left)
+    print(node.data, end='->')
+    in_order(node.right)
 
-def post_order(model):
-    if model is None:
+def post_order(node):
+    if node is None:
         return
 
-    post_order(model.left)
-    post_order(model.right)
-    print(model.data, end='->')
+    post_order(node.left)
+    post_order(node.right)
+    print(node.data, end='->')
 
 def delete_node(node, value):
     if node is None:
@@ -84,6 +84,14 @@ def delete_node(node, value):
             return node.right
         elif node.right is None:
             return node.left
+        #have 2 leaf node
+        else:
+            max_left = node.left
+
+            while max_left.right:
+                max_left = max_left.right
+                node.data = max_left.data
+                node.left = delete_node(node.left, max_left.data)
 
     return node
 

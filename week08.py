@@ -36,12 +36,12 @@ class TreeNode:
         while True:
             if c is None:
                 return False
-            elif c.data is find_number:
+            elif c.data is find_value:
                 return True
-            elif c.data > find_number:
+            elif c.data > find_value:
                 c = c.left
                 continue
-            elif c.data < find_number:
+            elif c.data < find_value:
                 c = c.right
                 continue
 
