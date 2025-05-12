@@ -93,6 +93,11 @@ def delete_node(node, value):
                 node.data = max_left.data
                 node.left = delete_node(node.left, max_left.data)
 
+            if max_left is node.left:
+                leaf = node.left
+                node = node.right
+                node.left = leaf
+
     return node
 
 if __name__ == '__main__':
