@@ -79,6 +79,7 @@ for row in G3.graph:
     print()
 print()
 
+# no selft
 G5 = MyGraph(4)
 
 G5.graph[a][d] = 1

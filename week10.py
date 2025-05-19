@@ -62,6 +62,7 @@ def in_order(node):
     print(node.data, end='->')
     in_order(node.right)
 
+#depth first search
 def post_order(node):
     if node is None:
         return
