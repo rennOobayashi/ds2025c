@@ -31,7 +31,6 @@ def bfs(graph, index, visited):
 
     next = index
     past = []
-    past_ind = 0
 
     while True:
         now = next
@@ -69,4 +68,4 @@ def bfs(graph, index, visited):
 
 dfs(graph, 6, visited_dfs)
 print()
-bfs(graph, 4, visited_bfs)
+bfs(graph, 6, visited_bfs)
