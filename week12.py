@@ -39,6 +39,6 @@ def bfs(graph, index, visited):
 
 
 
-dfs(graph, 6, visited_dfs)
+dfs(graph, 4, visited_dfs)
 print()
 bfs(graph, 4, visited_bfs)
